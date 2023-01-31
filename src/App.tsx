@@ -1,25 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
+import Header from './components/header/Header';
+import Footer from './components/footer/Footer';
+
+import { createTheme, ThemeProvider, responsiveFontSizes } from '@mui/material';
+import { dark } from '@mui/material/styles/createPalette';
+
 function App() {
+
+  const theme = createTheme({
+    palette: {
+      primary: {
+        main: '#7A9E9F'
+      }
+    }
+  });
+  responsiveFontSizes(theme);
+
   return (
+    <ThemeProvider theme={theme}>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <h4>Hello Darkness my old friend</h4>
+      <Footer />
     </div>
+    </ThemeProvider>
+      
   );
 }
 

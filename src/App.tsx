@@ -21,7 +21,6 @@ function App() {
     <ThemeProvider theme={theme}>
     <div className="App">
       <Header />
-      <h4>Hello Darkness my old friend</h4>
       <Footer />
     </div>
     </ThemeProvider>

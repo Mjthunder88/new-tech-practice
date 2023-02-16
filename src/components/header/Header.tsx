@@ -10,6 +10,7 @@ import {
   Grid,
 } from "@mui/material";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import SearchIcon from '@mui/icons-material/Search';
 
 const Header = () => {
 
@@ -52,7 +53,7 @@ const toggleMenu = () => {
                 </Typography>
               </Grid>
               <Grid item>
-                <ShoppingCartIcon></ShoppingCartIcon>
+                <SearchIcon></SearchIcon>
               </Grid>
             </Grid>
           </Toolbar>

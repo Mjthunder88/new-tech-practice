@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import '../ui/hamburger.css'
 
 import {
   Typography,
@@ -6,34 +7,52 @@ import {
   CssBaseline,
   Toolbar,
   Container,
-  Avatar,
   Grid,
 } from "@mui/material";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
 const Header = () => {
+
+const [isActive, setIsActive] = useState(false)
+
+const toggleMenu = () => {
+  setIsActive(!isActive)
+}
+
   return (
     <>
       <CssBaseline />
       <AppBar position="relative">
         <Container maxWidth="xl">
-          <Toolbar>
+          <Toolbar sx={{padding: 0}}>
             <Grid
               container
-              //   direction="row"
+              direction="row"
               justifyContent="space-between"
               alignItems="center"
             >
               <Grid item>
-                <Typography variant="h2">Valley Supply</Typography>
+              <button
+          className={
+            isActive
+              ? "hamburger hamburger--spring is-active"
+              : "hamburger hamburger--spring"
+          }
+          type="button"
+          onClick={toggleMenu}
+        >
+          <span className="hamburger-box">
+            <span className="hamburger-inner"></span>
+          </span>
+        </button>
               </Grid>
-              <Grid container>
-                <Grid item>
-                  <ShoppingCartIcon></ShoppingCartIcon>
-                </Grid>
-                <Grid item>
-                  <Avatar>M</Avatar>
-                </Grid>
+              <Grid item>
+                <Typography variant="h5" component="h1">
+                  Valley Supply
+                </Typography>
+              </Grid>
+              <Grid item>
+                <ShoppingCartIcon></ShoppingCartIcon>
               </Grid>
             </Grid>
           </Toolbar>

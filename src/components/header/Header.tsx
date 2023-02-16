@@ -53,7 +53,7 @@ const toggleMenu = () => {
                 </Typography>
               </Grid>
               <Grid item>
-                <SearchIcon></SearchIcon>
+                <SearchIcon sx={{fontSize: "2rem"}}></SearchIcon>
               </Grid>
             </Grid>
           </Toolbar>
